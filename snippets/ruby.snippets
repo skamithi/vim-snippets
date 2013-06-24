@@ -959,3 +959,9 @@ snippet shared
 	shared_examples "${1:shared examples name}" ${2}
 snippet itb
 	it_behaves_like "${1:shared examples name}"${2}
+snippet rjb
+  a = <<-EOS
+    jQuery ->
+	  ${1:jquery block }
+	EOS
+  page.execute_script CoffeeScript.compile(a)
